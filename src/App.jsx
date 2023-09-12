@@ -9,7 +9,9 @@ function App() {
   const [bookmarks, setBookmarks] =useState([]);
 
   const handleAddToBookmark =(blog)=>{ 
-    console.log(blog)
+    // console.log(blog)
+    const newBookmarks = [...bookmarks, blog];
+    setBookmarks(newBookmarks);
   }
 
   return (
@@ -17,7 +19,7 @@ function App() {
      <Header></Header>
      <main className='md:flex gap-6 mt-7'>
         <Blogs handleAddToBookmark={handleAddToBookmark}></Blogs>  {/* sending this function as props to get bookmarked blog. */}
-        <BookMarks></BookMarks>
+        <BookMarks bookmarks={bookmarks}></BookMarks> {/* sending bookmarked blogs to BookMarks component */}
      </main >
     </>
   )
