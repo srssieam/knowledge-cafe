@@ -9,10 +9,10 @@ function App() {
   return (
     <>
      <Header></Header>
-     <main className='md:flex'>
+     <main className='md:flex gap-6 mt-7'>
         <Blogs></Blogs>
         <BookMarks></BookMarks>
-     </main>
+     </main >
     </>
   )
 }
