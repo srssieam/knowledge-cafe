@@ -1,9 +1,9 @@
 import { FiBookmark } from 'react-icons/fi';
 import PropTypes from 'prop-types';
 const Blog = ({blog, handleAddToBookmark, handleMarkAsRead}) => {
-    const {title,cover, author, author_img, reading_time, posted_date, hashtags} = blog;
+    const {title,cover, author, author_img, reading_time, posted_date, hashtags, id} = blog;
     return (
-        <div>
+        <div className='mb-6'>
             <img src={cover} alt="" className='rounded-xl w-full'/>
             <div className='flex justify-between items-center my-6'>
                 <div className='flex gap-2 items-center'>
@@ -24,7 +24,7 @@ const Blog = ({blog, handleAddToBookmark, handleMarkAsRead}) => {
                     })
                 }
             </p>
-            <button onClick={()=> handleMarkAsRead(blog.reading_time)} className='font-bold text-blue-700 underline my-9'>Mark as read</button>
+            <button onClick={()=> handleMarkAsRead(reading_time, id)} className='font-bold text-blue-700 underline my-9'>Mark as read</button>
             <hr className='border-1'/>
         </div>
     );
