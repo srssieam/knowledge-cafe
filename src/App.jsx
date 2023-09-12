@@ -14,12 +14,18 @@ function App() {
     setBookmarks(newBookmarks);
   }
 
+  const[readingTime, setReadingTime] = useState(0);
+
+  const handleMarkAsRead = time =>{
+    console.log('marking as read', time);
+    setReadingTime(readingTime + time);
+  }
   return (
     <>
      <Header></Header>
      <main className='md:flex gap-6 mt-7'>
-        <Blogs handleAddToBookmark={handleAddToBookmark}></Blogs>  {/* sending this function as props to get bookmarked blog. */}
-        <BookMarks bookmarks={bookmarks}></BookMarks> {/* sending bookmarked blogs to BookMarks component */}
+        <Blogs handleAddToBookmark={handleAddToBookmark} handleMarkAsRead={handleMarkAsRead}></Blogs>  {/* sending this function as props to get bookmarked blog. */}
+        <BookMarks bookmarks={bookmarks} readingTime={readingTime}></BookMarks> {/* sending bookmarked blogs to BookMarks component */}
      </main >
     </>
   )

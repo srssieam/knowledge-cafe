@@ -1,3 +1,4 @@
+
 import PropTypes from 'prop-types';
 
 const BookMark = ({bookmark}) => {
@@ -9,7 +10,7 @@ const BookMark = ({bookmark}) => {
     );
 };
 
-BookMark.proptypes ={
+BookMark.propTypes ={
     bookmark: PropTypes.object
 }
 export default BookMark;

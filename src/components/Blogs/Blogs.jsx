@@ -3,7 +3,7 @@ import { useState } from "react";
 import Blog from "../Blog/Blog";
 import PropTypes from 'prop-types';
 
-const Blogs = ({handleAddToBookmark}) => {  // receiving handleAddToBookmark function from App.jsx
+const Blogs = ({handleAddToBookmark, handleMarkAsRead}) => {  // receiving handleAddToBookmark function from App.jsx
     const[blogs, setBlogs] = useState([]);
      
     useEffect(()=>{
@@ -20,7 +20,7 @@ const Blogs = ({handleAddToBookmark}) => {  // receiving handleAddToBookmark fun
             {
                 blogs.map( blog =>{
                     return(
-                        <Blog key={blog.id} blog={blog} handleAddToBookmark={handleAddToBookmark}></Blog>  //send handleAddToBookmark function to Blog.jsx
+                        <Blog key={blog.id} blog={blog} handleAddToBookmark={handleAddToBookmark} handleMarkAsRead={handleMarkAsRead}></Blog>  //send handleAddToBookmark function to Blog.jsx
                     )
                 })
             }
@@ -30,5 +30,6 @@ const Blogs = ({handleAddToBookmark}) => {  // receiving handleAddToBookmark fun
 
 Blogs.propTypes = {
     handleAddToBookmark: PropTypes.func,
+    handleMarkAsRead: PropTypes.func
 }
 export default Blogs;
