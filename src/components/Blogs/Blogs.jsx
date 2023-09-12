@@ -14,7 +14,7 @@ const Blogs = ({handleAddToBookmark}) => {  // receiving handleAddToBookmark fun
         }
         loadData()
     },[])
-    console.log(blogs)
+    console.log(blogs, 'i am from Blogs')
     return (
         <div className="md:w-2/3">
             {
