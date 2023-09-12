@@ -14,8 +14,9 @@ const Blogs = () => {
         loadData()
     },[])
     return (
-        <div>
+        <div className="md:w-2/3">
             {blogs.length}
+            <h1>Blogs here</h1>
         </div>
     );
 };

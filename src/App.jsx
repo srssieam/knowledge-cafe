@@ -1,14 +1,18 @@
 
 import './App.css'
 import Blogs from './components/Blogs/Blogs'
-import Header from './components/Header'
+import BookMarks from './components/BookMarks/BookMarks'
+import Header from './components/Header/Header'
 
 function App() {
 
   return (
     <>
      <Header></Header>
-     <Blogs></Blogs>
+     <main className='md:flex'>
+        <Blogs></Blogs>
+        <BookMarks></BookMarks>
+     </main>
     </>
   )
 }
